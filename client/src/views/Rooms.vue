@@ -1,27 +1,38 @@
 <template>
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="" class="card-img" alt="">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-  </div>
+  <div class="container d-flex flex-wrap">
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
     </div>
-    <div class="col-sm">
-      One of three columns
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
+    </div>
+    <div class="room p-2 m-3 border">
+        <h4> weeeww</h4>
+        <h5> boleh</h5>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -31,5 +42,14 @@ export default {
 </script>
 
 <style>
-
+  .room{
+    min-width: 200px;
+  }
+  .container{
+      max-width: 1140px;
+      flex-direction: columns;
+      align-content: center;
+      justify-content: center;
+      align-items: flex-start;
+  }
 </style>
