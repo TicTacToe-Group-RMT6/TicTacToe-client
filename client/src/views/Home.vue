@@ -1,14 +1,17 @@
 <template>
   <div class="container">
-    <form>
+    <form class="form-login">
       <div>
-        <img src="../assets/tictac.jpg" class="front-img" height="350px">
+        <img src="../assets/wew.jpg" class="front-img" height="350px">
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Username</label><br>
+      <h1 class="mt-3">{{ title }}</h1>
+      <div class="form-group text-start">
+        <h3 class="mt-4" for="exampleInputEmail1">Username</h3>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-dark mt-3">Login</button>
+      </div>
     </form>
   </div>
 </template>
@@ -31,5 +34,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 5%;
+    margin-top: -3%;
+  }
+  .form-login {
+    font-family: 'Amatic SC', cursive;
+    box-shadow: 0px 0px 3px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .front-img {
+    border-radius: 10px;
   }
 </style>
