@@ -2,18 +2,19 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Rooms from '../views/Rooms.vue'
+import store from '../store/index'
 
 Vue.use(VueRouter)
 
-// const routerGuard = (to, from, next) => {
-//   const isAuthenticated = localStorage.getItem('room')
+const routerGuard = (to, from, next) => {
+  const isAuthenticated = store.state.room
 
-//   if (isAuthenticated) {
-//     next()
-//   } else {
-//     next({ name: 'Rooms' })
-//   }
-// }
+  if (isAuthenticated !== '') {
+    next()
+  } else {
+    next({ name: 'Rooms' })
+  }
+}
 
 const routes = [
   {
@@ -27,8 +28,8 @@ const routes = [
     component: Rooms
   },
   {
-    // beforeEnter: routerGuard,
     path: '/about',
+    beforeEnter: routerGuard,
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
