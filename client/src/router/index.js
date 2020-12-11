@@ -5,6 +5,16 @@ import Rooms from '../views/Rooms.vue'
 
 Vue.use(VueRouter)
 
+// const routerGuard = (to, from, next) => {
+//   const isAuthenticated = localStorage.getItem('room')
+
+//   if (isAuthenticated) {
+//     next()
+//   } else {
+//     next({ name: 'Rooms' })
+//   }
+// }
+
 const routes = [
   {
     path: '/',
@@ -17,6 +27,7 @@ const routes = [
     component: Rooms
   },
   {
+    // beforeEnter: routerGuard,
     path: '/about',
     name: 'About',
     // route level code-splitting
