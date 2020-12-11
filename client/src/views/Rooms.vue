@@ -1,57 +1,70 @@
 <template>
-  <div class="container d-flex flex-wrap">
-    <div>
-      <img src="../assets/rooms.png" style="width: 50%; margin-bottom: 5%;">
-      <button type="button" class="btn btn-outline-danger" style="justify-content: flex-end;">Create Room</button>
-    </div>
-    <div class="row row-cols-4">
-      <div class="col">
-        <div class="card mb-3" style="max-width: 700px;">
-          <div class="row no-gutters">
-            <div class="">
-              <img src="../assets/tictac.jpg" class="card-img">
-            </div>
-            <div class="">
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room1')">Join2</button>
+    <div class="container d-flex flex-wrap">
+      <div>
+        <h1 style="color:Tomato;">LETS PLAY AND CHILL!!</h1>
+        <img src="../assets/rooms.png" style="width: 50%; margin-bottom: 5%;">
+      </div>
+      <div class="row row-cols-4">
+        <div class="col">
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="">
+                <img src="../assets/tictac.jpg" class="card-img img-fluid" style="width: 700px; height: 200px">
               </div>
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room2')">Join</button>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room3')">Join</button>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room4')">Join</button>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room5')">Join</button>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Title Room</h5>
-                <p class="card-text"><small class="text-muted">Username</small></p>
-                <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room6')">Join</button>
+              <div class="">
+                <div class="card-body">
+                  <h4 class="card-title">Room 1</h4>
+                  <button @click.prevent="join('room1')" type="button" class="btn btn-warning">Join</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="">
+                <img src="../assets/project.jpg" class="card-img img-fluid" style="width: 700px; height: 200px">
+              </div>
+              <div class="">
+                <div class="card-body">
+                  <h4 class="card-title">Room 2</h4>
+                  <button @click.prevent="join('room2')" type="button" class="btn btn-warning">Join</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="">
+                <img src="../assets/card1.jpg" class="card-img img-fluid" style="width: 700px; height: 200px">
+              </div>
+              <div class="">
+                <div class="card-body">
+                  <h4 class="card-title">Room 3</h4>
+                  <button @click.prevent="join('room3')" type="button" class="btn btn-warning">Join</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="">
+                <img src="../assets/card2.jpg" class="card-img img-fluid" style="width: 700px; height: 200px">
+              </div>
+              <div class="">
+                <div class="card-body">
+                  <h4 class="card-title">Room 4</h4>
+                  <button @click.prevent="join('room3')" type="button" class="btn btn-warning">Join</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -69,14 +82,7 @@ export default {
 </script>
 
 <style>
-  .room{
-    min-width: 200px;
+  .container{
+    font-family: 'Amatic SC', cursive;
   }
-  /* .container{
-      max-width: 1140px;
-      flex-direction: columns;
-      align-content: center;
-      justify-content: center;
-      align-items: flex-start;
-  } */
 </style>
