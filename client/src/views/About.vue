@@ -21,9 +21,11 @@
     <div>
       <div v-if="player1Win === true">
         PLAYER 1 WIN
+        <button @click="backtoListRooms">BACK</button>
       </div>
       <div v-else-if="player2Win === true">
         PLAYER 2 WIN
+        <button @click="backtoListRooms">BACK</button>
       </div>
     </div>
   </div>
@@ -48,9 +50,13 @@ export default {
   },
   methods: {
     clickBoard (row, col) {
-      if (!this.isWin) {
+      if (!this.isWin && this.tictactoeBoard[row][col] === '') {
         this.$socket.emit('gameBoard', { row, col, room: this.room })
       }
+    },
+    backtoListRooms () {
+      this.$socket.emit('leaveRoom', this.room)
+      this.$router.push({ name: 'Rooms' })
     },
     checkWin () {
       if (this.tictactoeBoard[0][0] === 'X' && this.tictactoeBoard[0][0] === this.tictactoeBoard[0][1] && this.tictactoeBoard[0][1] === this.tictactoeBoard[0][2]) {

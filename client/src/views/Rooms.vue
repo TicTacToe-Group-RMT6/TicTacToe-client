@@ -16,8 +16,37 @@
                 <h5 class="card-title">Title Room</h5>
                 <p class="card-text"><small class="text-muted">Username</small></p>
                 <button type="button" class="btn btn-outline-warning">Join</button>
-                <button @click.prevent="join('room2')">Join2</button>
-                <button @click.prevent="join('room3')">Join3</button>
+                <button @click.prevent="join('room1')">Join2</button>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Title Room</h5>
+                <p class="card-text"><small class="text-muted">Username</small></p>
+                <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room2')">Join</button>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Title Room</h5>
+                <p class="card-text"><small class="text-muted">Username</small></p>
+                <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room3')">Join</button>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Title Room</h5>
+                <p class="card-text"><small class="text-muted">Username</small></p>
+                <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room4')">Join</button>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Title Room</h5>
+                <p class="card-text"><small class="text-muted">Username</small></p>
+                <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room5')">Join</button>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Title Room</h5>
+                <p class="card-text"><small class="text-muted">Username</small></p>
+                <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room6')">Join</button>
               </div>
             </div>
           </div>
