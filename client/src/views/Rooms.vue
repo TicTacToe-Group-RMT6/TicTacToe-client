@@ -16,6 +16,8 @@
                 <h5 class="card-title">Title Room</h5>
                 <p class="card-text"><small class="text-muted">Username</small></p>
                 <button type="button" class="btn btn-outline-warning">Join</button>
+                <button @click.prevent="join('room2')">Join2</button>
+                <button @click.prevent="join('room3')">Join3</button>
               </div>
             </div>
           </div>
@@ -27,7 +29,13 @@
 
 <script>
 export default {
-  name: 'Rooms'
+  name: 'Rooms',
+  methods: {
+    join (room) {
+      console.log(room, '<<<< room')
+      this.$socket.emit('joinRoom', room)
+    }
+  }
 }
 </script>
 
