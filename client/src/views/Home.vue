@@ -7,7 +7,7 @@
       <h1 class="mt-3">{{ title }}</h1>
       <div class="form-group text-start">
         <h3 class="mt-4" for="exampleInputEmail1">Username</h3>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="d-grid gap-2">
         <button type="submit" class="btn btn-dark mt-3">Login</button>
