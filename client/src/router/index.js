@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Rooms from '../views/Rooms.vue'
 import store from '../store/index'
 
@@ -19,16 +18,11 @@ const routerGuard = (to, from, next) => {
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/rooms',
     name: 'Rooms',
     component: Rooms
   },
   {
-    path: '/about',
+    path: '/games',
     beforeEnter: routerGuard,
     name: 'About',
     // route level code-splitting

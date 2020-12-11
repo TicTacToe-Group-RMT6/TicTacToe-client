@@ -1,30 +1,26 @@
 <template>
-  <div class="">
-    <h1>This is an about page</h1>
-    <div class="">
-    <div class="row m-1" style="">
-      <button @click="clickBoard(0,0)" class="col-4 bg-info" style="height: 100px;">{{this.tictactoeBoard[0][0]}}</button>
-      <button @click="clickBoard(0,1)" class="col-4 bg-primary" style="height: 100px">{{this.tictactoeBoard[0][1]}}</button>
-      <button @click="clickBoard(0,2)" class="col-4 bg-warning" style="height: 100px">{{this.tictactoeBoard[0][2]}}</button>
-    </div>
-    <div class="row m-1">
-      <button @click="clickBoard(1,0)" class="col-4 bg-info" style="height: 100px;">{{this.tictactoeBoard[1][0]}}</button>
-      <button @click="clickBoard(1,1)" class="col-4 bg-primary" style="height: 100px">{{this.tictactoeBoard[1][1]}}</button>
-      <button @click="clickBoard(1,2)" class="col-4 bg-warning" style="height: 100px">{{this.tictactoeBoard[1][2]}}</button>
-    </div>
-    <div class="row m-1">
-      <button @click="clickBoard(2,0)" class="col-4 bg-info" style="height: 100px;">{{this.tictactoeBoard[2][0]}}</button>
-      <button @click="clickBoard(2,1)" class="col-4 bg-primary" style="height: 100px">{{this.tictactoeBoard[2][1]}}</button>
-      <button @click="clickBoard(2,2)" class="col-4 bg-warning" style="height: 100px">{{this.tictactoeBoard[2][2]}}</button>
-    </div>
-    </div>
+  <div class="game">
+    <span id= "turn"> Tic Tac Toe</span>
+    <div class="box" @click="clickBoard(0,0)">{{this.tictactoeBoard[0][0]}} </div>
+        <div class="box" @click="clickBoard(0,1)"> {{this.tictactoeBoard[0][1]}} </div>
+        <div class="box" @click="clickBoard(0,2)">{{this.tictactoeBoard[0][2]}} </div>
+        <div class="box" @click="clickBoard(1,0)">{{this.tictactoeBoard[1][0]}} </div>
+        <div class="box" @click="clickBoard(1,1)">{{this.tictactoeBoard[1][1]}} </div>
+        <div class="box" @click="clickBoard(1,2)">{{this.tictactoeBoard[1][2]}} </div>
+        <div class="box" @click="clickBoard(2,0)">{{this.tictactoeBoard[2][0]}} </div>
+        <div class="box" @click="clickBoard(2,1)">{{this.tictactoeBoard[2][1]}} </div>
+        <div class="box" @click="clickBoard(2,2)">{{this.tictactoeBoard[2][2]}} </div>
     <div>
       <div v-if="player1Win === true">
-        PLAYER 1 WIN
+        PLAYER O WIN <br>
         <button @click="backtoListRooms">BACK</button>
       </div>
       <div v-else-if="player2Win === true">
-        PLAYER 2 WIN
+        PLAYER X WIN <br>
+        <button @click="backtoListRooms">BACK</button>
+      </div>
+      <div v-else-if="draw === true">
+        DRAW <br>
         <button @click="backtoListRooms">BACK</button>
       </div>
     </div>
@@ -45,7 +41,8 @@ export default {
       ],
       isWin: false,
       player1Win: false,
-      player2Win: false
+      player2Win: false,
+      draw: false
     }
   },
   methods: {
@@ -101,7 +98,7 @@ export default {
         console.log('X win')
       }
       // selectWinnerBoxes(box1,box5,box9);
-      if (this.tictactoeBoard[0][2] === 'X' && this.tictactoeBoard[0][2] === this.tictactoeBoard[1][1] && this.tictactoeBoard[0][2] === this.tictactoeBoard[2][1]) {
+      if (this.tictactoeBoard[0][2] === 'X' && this.tictactoeBoard[0][2] === this.tictactoeBoard[1][1] && this.tictactoeBoard[0][2] === this.tictactoeBoard[2][0]) {
         this.isWin = true
         this.player2Win = true
         console.log('X win')
@@ -149,11 +146,21 @@ export default {
         console.log('O win')
       }
       // selectWinnerBoxes(box1,box5,box9);
-      if (this.tictactoeBoard[0][2] === 'O' && this.tictactoeBoard[0][2] === this.tictactoeBoard[1][1] && this.tictactoeBoard[0][2] === this.tictactoeBoard[2][1]) {
+      if (this.tictactoeBoard[0][2] === 'O' && this.tictactoeBoard[0][2] === this.tictactoeBoard[1][1] && this.tictactoeBoard[0][2] === this.tictactoeBoard[2][0]) {
         this.isWin = true
         this.player1Win = true
         console.log('O win')
       }
+
+      if (this.tictactoeBoard[0][0] && this.tictactoeBoard[0][1] && this.tictactoeBoard[0][2]) {
+        if (this.tictactoeBoard[1][0] && this.tictactoeBoard[1][1] && this.tictactoeBoard[1][2]) {
+          if (this.tictactoeBoard[2][0] && this.tictactoeBoard[2][1] && this.tictactoeBoard[2][2]) {
+            this.isWin = true
+            this.draw = true
+          }
+        }
+      }
+
       // selectWinnerBoxes(box3,box5,box7);
     }
   },
@@ -180,3 +187,42 @@ export default {
   }
 }
 </script>
+<style>
+  .game{
+  width: 300px;
+  overflow: hidden;
+  margin: 50px auto 0 auto;
+}
+
+.game span{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 25px;
+  background: #334d50;
+}
+
+.game .box{
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  transition: all .25s ease-in-out;
+  font-family: sans-serif;
+  font-size: 85px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.game .box:hover{
+  background: rgba(10,10,10,0.5);
+  color: #fff
+}
+button{
+  background: #334d50;
+  color: white;
+}
+</style>
